@@ -1,0 +1,18 @@
+{
+  "name": "edu-padlet",
+  "version": "1.0.0",
+  "description": "교육용 Padlet 클론 — 6단계 프로젝트",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "step1": "cd code/step1-notion && node server.js",
+    "step2": "cd code/step2-sqlite && node server.js",
+    "step3": "cd code/step3-supabase && node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5"
+  }
+}
