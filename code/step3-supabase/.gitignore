@@ -1,0 +1,4 @@
+node_modules/
+.env
+padlet.db
+.DS_Store

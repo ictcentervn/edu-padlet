@@ -1,0 +1,335 @@
+/* ============================================
+   우리 반 패들렛 - 스타일
+   ============================================ */
+
+/* CSS 변수 — 카드 색상 4가지 */
+:root {
+  --color-yellow: #fff9c4;
+  --color-blue: #bbdefb;
+  --color-green: #c8e6c9;
+  --color-pink: #f8bbd0;
+  --color-bg: #f5f5f5;
+  --color-header: #5c6bc0;
+  --color-text: #333;
+  --color-text-light: #666;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+}
+
+/* 기본 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+/* ============================================
+   헤더
+   ============================================ */
+.header {
+  background-color: var(--color-header);
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.add-btn {
+  background-color: white;
+  color: var(--color-header);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   보드 (카드 그리드)
+   ============================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.loading-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 40px;
+  font-size: 1.1rem;
+}
+
+.empty-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 60px 20px;
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   카드
+   ============================================ */
+.card {
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+  word-wrap: break-word;
+  min-height: 120px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 카드 색상별 배경 */
+.card.yellow { background-color: var(--color-yellow); }
+.card.blue { background-color: var(--color-blue); }
+.card.green { background-color: var(--color-green); }
+.card.pink { background-color: var(--color-pink); }
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  padding-right: 28px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* 카드 삭제 버튼 */
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #999;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.delete-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #e53935;
+}
+
+/* ============================================
+   모달
+   ============================================ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background: white;
+  border-radius: var(--radius);
+  padding: 28px;
+  width: 90%;
+  max-width: 460px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 1.2rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #999;
+  padding: 0 4px;
+}
+
+.modal-close:hover {
+  color: var(--color-text);
+}
+
+/* 폼 스타일 */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-header);
+}
+
+/* 색상 선택 */
+.color-picker {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.color-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.color-option input[type="radio"] {
+  display: none;
+}
+
+.color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.color-option input[type="radio"]:checked + .color-swatch {
+  border-color: var(--color-header);
+  transform: scale(1.1);
+}
+
+.color-swatch.yellow { background-color: var(--color-yellow); }
+.color-swatch.blue { background-color: var(--color-blue); }
+.color-swatch.green { background-color: var(--color-green); }
+.color-swatch.pink { background-color: var(--color-pink); }
+
+/* 제출 버튼 */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-header);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.submit-btn:hover {
+  background-color: #4a5ab5;
+}
+
+.submit-btn:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   반응형 (모바일)
+   ============================================ */
+@media (max-width: 600px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .header-title {
+    font-size: 1.1rem;
+  }
+
+  .add-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .board {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .container {
+    padding: 16px 12px;
+  }
+
+  .modal {
+    width: 95%;
+    padding: 20px;
+  }
+}

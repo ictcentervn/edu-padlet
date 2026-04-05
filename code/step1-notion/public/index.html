@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>우리 반 패들렛</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 상단 헤더 -->
+  <header class="header">
+    <h1 class="header-title">📋 우리 반 패들렛</h1>
+    <button class="add-btn" id="openModalBtn">+ 카드 추가</button>
+  </header>
+
+  <!-- 메인: 카드 보드 영역 -->
+  <main class="container">
+    <div id="board" class="board">
+      <!-- 카드들이 여기에 표시됩니다 -->
+      <p class="loading-text">카드를 불러오는 중...</p>
+    </div>
+  </main>
+
+  <!-- 카드 추가 모달 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>새 카드 만들기</h2>
+        <button class="modal-close" id="closeModalBtn">&times;</button>
+      </div>
+      <form id="cardForm">
+        <div class="form-group">
+          <label for="cardTitle">제목</label>
+          <input type="text" id="cardTitle" placeholder="카드 제목을 입력하세요" required>
+        </div>
+        <div class="form-group">
+          <label for="cardContent">내용</label>
+          <textarea id="cardContent" rows="4" placeholder="카드 내용을 입력하세요"></textarea>
+        </div>
+        <div class="form-group">
+          <label>카드 색상</label>
+          <div class="color-picker">
+            <label class="color-option">
+              <input type="radio" name="cardColor" value="yellow" checked>
+              <span class="color-swatch yellow"></span>
+              <span>노랑</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="cardColor" value="blue">
+              <span class="color-swatch blue"></span>
+              <span>파랑</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="cardColor" value="green">
+              <span class="color-swatch green"></span>
+              <span>초록</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="cardColor" value="pink">
+              <span class="color-swatch pink"></span>
+              <span>분홍</span>
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">카드 추가하기</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
