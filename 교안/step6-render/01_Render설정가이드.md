@@ -186,7 +186,7 @@ app.listen(3000, () => {
 });
 ```
 
-> 💡 교사 메모: Step 5(Glitch)에서 이미 `process.env.PORT`로 수정했다면 추가 변경은 필요 없습니다. Step 5를 건너뛴 학생이 있다면 이 수정이 필수입니다.
+> 💡 교사 메모: Step 5(Codespaces)에서 이미 `process.env.PORT`로 수정했다면 추가 변경은 필요 없습니다. Step 5를 건너뛴 학생이 있다면 이 수정이 필수입니다.
 
 ---
 

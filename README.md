@@ -16,7 +16,7 @@ Padlet과 유사한 보드 앱을 6단계로 나누어 점진적으로 개발합
 | 단계 | 도구 | 핵심 개념 | 대상 학년 |
 |------|------|---------|---------|
 | Step 4 | GitHub | 코드 관리, 버전 관리, 포트폴리오 | 중등~고등 |
-| Step 5 | Glitch | 브라우저 코딩, 즉시 배포, 실시간 협업 | 중등~고등 |
+| Step 5 | Codespaces | 브라우저 코딩, 즉시 배포, 실시간 협업 | 중등~고등 |
 | Step 6 | Render | 실무 배포, CI/CD | 고등 심화 |
 
 ## 빠른 시작 (Step 3 바로 실행)
@@ -46,7 +46,7 @@ cd code/step3-supabase && npm install && node server.js
 
 ```
 edu-padlet/
-├── server.js              ← Glitch/Render 배포용 진입점
+├── server.js              ← Codespaces/Render 배포용 진입점
 ├── package.json           ← 배포용 설정
 ├── code/
 │   ├── step1-notion/      ← Step 1 코드 (Notion DB)
@@ -71,7 +71,7 @@ edu-padlet/
 ## 학년별 추천 경로
 
 ```
-중1~중3:  Step 1 → Step 5 (Notion + Glitch = 설치 없이 완성)
+중1~중3:  Step 1 → Step 5 (Notion + Codespaces = 설치 없이 완성)
 고1~고2:  Step 1 → 2 → 3 → 4 → 5
 고3 심화:  전체 6단계
 ```
